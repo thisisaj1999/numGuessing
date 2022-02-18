@@ -17,50 +17,50 @@ body {
   background-color: #0a0f0d;
 }
 
-/* LAYOUT */
+.game {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 header {
   position: relative;
-  height: 35vh;
+  height: 39.5vh;
   border-bottom: 7px solid #eee;
 }
 
-main {
-  height: 65vh;
-  color: #eee;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+.heading {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 1.8rem;
 }
 
-.left {
-  width: 52rem;
+.pos {
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
+  gap: 3rem;
   align-items: center;
 }
 
-.right {
-  width: 52rem;
-  font-size: 2rem;
+.btn {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 1rem;
 }
 
-/* ELEMENTS STYLE */
-h1 {
-  font-size: 4rem;
-  text-align: center;
-  position: absolute;
-  width: 100%;
-  top: 52%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.again {
+  align-self: flex-start;
+  margin-left: 2rem;
 }
 
 .number {
   background: #eee;
   color: #333;
-  font-size: 6rem;
+  font-size: 4rem;
   width: 15rem;
-  padding: 3rem 0rem;
+  padding: 2rem 0rem;
   text-align: center;
   position: absolute;
   bottom: 0;
@@ -68,17 +68,37 @@ h1 {
   transform: translate(-50%, 50%);
 }
 
-.between {
-  font-size: 1.4rem;
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
+.leaderBoard {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7rem;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+  padding-left: 2rem;
 }
 
-.again {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
+.msgPos {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3.5rem;
+  margin-bottom: 2rem;
+  gap: 3rem;
+  align-items: center;
+}
+
+.message {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0 2rem;
+  line-height: 2.4rem;
+}
+
+.inputPos {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
 }
 
 .guess {
@@ -86,125 +106,190 @@ h1 {
   border: 4px solid #eee;
   font-family: inherit;
   color: inherit;
-  font-size: 5rem;
-  padding: 2.5rem;
-  width: 25rem;
+  font-size: 3.5rem;
+  padding: 1rem 1.5rem;
+  width: 15rem;
   text-align: center;
-  display: block;
-  margin-bottom: 3rem;
 }
 
-.btn {
-  border: none;
-  background-color: #eee;
-  color: #222;
-  font-size: 2rem;
-  font-family: inherit;
-  padding: 2rem 3rem;
-  cursor: pointer;
+.check {
+  padding: 1.2rem;
+  font-size: 1.3rem;
 }
 
-.btn:hover {
-  background-color: #ccc;
-}
-
-.message {
-  margin-bottom: 8rem;
-  height: 3rem;
-}
-
-.label-score {
-  margin-bottom: 2rem;
-}
-
-@media screen and (max-width: 426px) {
-  header {
-    height: 38vh;
+@media screen and (min-width: 425px) {
+  .heading {
+    font-size: 2.3rem;
   }
 
-  main {
-    height: 62vh;
-  }
-
-  h1 {
-    font-size: 3rem;
-    top: 25%;
-    text-align: center;
-    line-height: 3.6rem;
-  }
-
-  .between {
-    font-size: 1rem;
-    top: 10rem;
-    right: 13rem;
-  }
-
-  .again {
-    padding: 1.2rem 0.8rem;
+  .pos {
+    margin-top: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .btn {
-    font-size: 1rem;
-    top: 57%;
-    text-align: center;
+    font-size: 1.3rem;
+    padding: 1.5rem;
   }
 
   .number {
-    font-size: 4rem;
-    padding: 2.5rem 0;
+    padding: 2rem 1rem;
+    font-size: 5rem;
   }
 
-  .right {
-    font-size: 1.2rem;
+  .leaderBoard {
+    flex-direction: row;
+    margin-top: 8rem;
+    padding-left: 0;
+    font-size: 1.3rem;
+  }
+
+  .msgPos {
+    margin-top: 4rem;
+    gap: 4rem;
   }
 
   .message {
-    margin-bottom: 4rem;
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
+
+  .inputPos {
+    flex-direction: row;
+    gap: 3rem;
   }
 
   .guess {
-    font-size: 3rem;
+    padding: 1.5rem 2rem;
     width: 18rem;
-    padding: 1.5rem 1rem;
-    height: 9rem;
+  }
+
+  .check {
+    padding: 1.6rem;
+    font-size: 1.8rem;
   }
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (min-width: 768px) {
   header {
-    height: 39vh;
+    padding-bottom: 2rem;
+  }
+  .heading {
+    font-size: 4.2rem;
+    margin-top: 5rem;
   }
 
-  main {
-    height: 61vh;
+  .pos {
+    margin-top: 2rem;
+    font-size: 2rem;
+    gap: 2rem;
   }
 
-  .between {
-    right: 10rem;
+  .btn {
+    font-size: 1.8rem;
+    padding: 2rem;
+    outline: none;
+  }
+
+  .again {
+    margin-left: 3rem;
+    margin-bottom: 5rem;
   }
 
   .number {
-    font-size: 3.5rem;
-    padding: 2.2rem 0;
+    padding: 2rem 1.5rem;
+    font-size: 6rem;
+  }
+
+  .leaderBoard {
+    margin-top: 9rem;
+    font-size: 2.4rem;
+    justify-content: space-evenly;
+    padding: 0 1rem;
+  }
+
+  .msgPos {
+    margin: 5rem 0;
+  }
+
+  .message {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+
+  .inputPos {
+    gap: 6rem;
   }
 
   .guess {
-    width: 14rem;
-    height: 8rem;
-    padding: 1rem;
+    padding: 2rem 2.5rem;
+    font-size: 4.5rem;
+    width: 20rem;
+  }
+
+  .check {
+    padding: 2rem;
+    font-size: 2.4rem;
   }
 }
 
-@media screen and (max-width: 321px) {
+@media screen and (min-width: 1024px) {
   header {
-    height: 40vh;
+    height: 59vh;
+    margin-top: 10rem;
   }
 
-  main {
-    height: 60vh;
+  .heading {
+    font-size: 5.7rem;
+    margin-top: 15rem;
   }
 
-  .between {
-    right: 7rem;
+  .pos {
+    margin-top: 3rem;
+    font-size: 3rem;
+  }
+
+  .btn {
+    font-size: 2rem;
+    padding: 3rem;
+  }
+
+  .again {
+    margin-left: 4rem;
+  }
+
+  .number {
+    padding: 2.5rem 1.5rem;
+    font-size: 6rem;
+  }
+
+  .leaderBoard {
+    margin-top: 10rem;
+    font-size: 3rem;
+  }
+
+  .msgPos {
+    margin: 6rem 0;
+    gap: 5rem;
+  }
+
+  .message {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+
+  .inputPos {
+    gap: 8rem;
+  }
+
+  .guess {
+    font-size: 5rem;
+    padding: 3rem 3.5rem;
+    width: 22rem;
+  }
+
+  .check {
+    padding: 3rem 2.5rem;
+    font-size: 3rem;
   }
 }
